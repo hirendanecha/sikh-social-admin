@@ -59,6 +59,12 @@ const routes: Routes = [
         canActivate: mapToCanActivate([AuthenticationGuard]),
       },
       {
+        path: 'advertisements',
+        loadChildren: () =>
+          import('./views/advertisement-page/advertisement.module').then((m) => m.AdvertisementModule),
+        canActivate: mapToCanActivate([AuthenticationGuard])
+      },
+      {
         path: 'pages',
         loadChildren: () =>
           import('./views/freedom-page/freedom-page.module').then(
