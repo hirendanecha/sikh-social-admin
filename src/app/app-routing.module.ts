@@ -23,13 +23,13 @@ const routes: Routes = [
           import('./views/dashboard/dashboard.module').then(
             (m) => m.DashboardModule
           ),
-        canActivate: mapToCanActivate([AuthenticationGuard]),
+        canActivate: mapToCanActivate([AuthenticationGuard])
       },
       {
-        path: 'post-list',
+        path: 'newsfeed',
         loadChildren: () =>
           import('./views/posts/post.module').then((m) => m.PostModule),
-        canActivate: mapToCanActivate([AuthenticationGuard]),
+        canActivate: mapToCanActivate([AuthenticationGuard])
       },
       // {
       //   path: 'community-post',
@@ -42,21 +42,37 @@ const routes: Routes = [
           import('./views/community/community.module').then(
             (m) => m.CommunityModule
           ),
-        canActivate: mapToCanActivate([AuthenticationGuard]),
+        canActivate: mapToCanActivate([AuthenticationGuard])
       },
       {
         path: 'user',
         loadChildren: () =>
           import('./views/users/user.module').then((m) => m.UserModule),
-        canActivate: mapToCanActivate([AuthenticationGuard]),
+        canActivate: mapToCanActivate([AuthenticationGuard])
       },
       {
         path: 'marketing',
         loadChildren: () =>
-          import('./views/marketing-page/marketing.module').then(
-            (m) => m.MarketingModule
-          ),
-        canActivate: mapToCanActivate([AuthenticationGuard]),
+          import('./views/marketing-page/marketing.module').then((m) => m.MarketingModule),
+        canActivate: mapToCanActivate([AuthenticationGuard])
+      },
+      {
+        path: 'pages',
+        loadChildren: () =>
+          import('./views/freedom-page/freedom-page.module').then((m) => m.FreedomPageModule),
+        canActivate: mapToCanActivate([AuthenticationGuard])
+      },
+      {
+        path: 'channels',
+        loadChildren: () =>
+          import('./views/channels/channels.module').then((m) => m.ChannelsModule),
+        canActivate: mapToCanActivate([AuthenticationGuard])
+      },
+      {
+        path: 'report-bugs',
+        loadChildren: () =>
+          import('./views/setting/setting.module').then((m) => m.SettingModule),
+        canActivate: mapToCanActivate([AuthenticationGuard])
       },
       {
         path: 'advertisements',
@@ -65,18 +81,10 @@ const routes: Routes = [
         canActivate: mapToCanActivate([AuthenticationGuard])
       },
       {
-        path: 'pages',
+        path: 'research',
         loadChildren: () =>
-          import('./views/freedom-page/freedom-page.module').then(
-            (m) => m.FreedomPageModule
-          ),
-        canActivate: mapToCanActivate([AuthenticationGuard]),
-      },
-      {
-        path: 'channels',
-        loadChildren: () =>
-          import('./views/channels/channels.module').then(
-            (m) => m.ChannelsModule
+          import('./views/research-topics/research-topics.module').then(
+            (m) => m.ResearchTopicsModule
           ),
         canActivate: mapToCanActivate([AuthenticationGuard]),
       },
@@ -110,4 +118,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

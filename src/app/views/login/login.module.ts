@@ -1,7 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { LoginComponent } from './login.component';
-import { CommunityComponent } from '../community/community.component';
-import { PostsComponent } from '../posts/posts.component';
 import {
   ButtonModule,
   CardModule,
